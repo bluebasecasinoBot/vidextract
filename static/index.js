@@ -310,15 +310,18 @@ sydDOM.howItWork = () =>{
                 [
                     sydDOM.infoTabs({
                         num:'01',
-                        text:'Click the paste button to paste video url or manually enter url in text section'
+                        text:'Click the paste button to paste video url or manually enter url in text section',
+                        header:'Paste in video url'
                     }),
                     sydDOM.infoTabs({
                         num:'02',
-                        text:'Once video has been processed, a tab will be opened below the input section'
+                        text:'Once video has been processed, a tab will be opened below the input section',
+                        header:'Select media resolution'
                     }),
                     sydDOM.infoTabs({
                         num:'03',
-                        text:'Select any resolution of download format of your choice to download'
+                        text:'Select any resolution of download format of your choice to download',
+                        header:'Click download button'
                     }),
                 ]
             )
@@ -326,7 +329,7 @@ sydDOM.howItWork = () =>{
     )
 }
 
-sydDOM.infoTabs = ({text = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae nesciunt repudiandae doloremque incidunt non voluptas',num}) =>{
+sydDOM.infoTabs = ({text = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae nesciunt repudiandae doloremque incidunt non voluptas',num,header}) =>{
     return createElement(
         'div',
         {
@@ -334,7 +337,7 @@ sydDOM.infoTabs = ({text = 'Lorem ipsum dolor sit, amet consectetur adipisicing 
         },
         [
             sydDOM.left(num),
-            sydDOM.msgTab(text)
+            sydDOM.msgTab(text,header)
         ]
     )
 }
@@ -352,14 +355,14 @@ sydDOM.left = (num) =>{
     )
 }
 
-sydDOM.msgTab = (text) =>{
+sydDOM.msgTab = (text,header) =>{
     return createElement(
         'div',
         {
             style:'height:fit-content;width:100%;display:flex;row-gap:10px;flex-direction:column'
         },
         [
-            createElement('p',{style:'font-weight:800;color:#171717;'},['Paste in video url']),
+            createElement('p',{style:'font-weight:800;color:#171717;'},[`${header}`]),
             createElement('p',{style:'color:#333;font-size:14px'},[`${text}`]),
         ]
     )
