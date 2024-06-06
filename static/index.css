@@ -7,6 +7,10 @@
 body{
     /* overflow: hidden; */
     /* color: #2a2a2ab1; */
+    background-image:url("./assets/newbg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
 }
 ::-webkit-scrollbar
 {
