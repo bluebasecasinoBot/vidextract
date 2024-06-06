@@ -56,7 +56,7 @@ ws.addEventListener('open',() =>{
                 {
                     case !parsed.status:
                         renderFailed.d = 'flex';
-                        renderFailed.msg = parsed.errorMsg
+                        renderFailed.msg = parsed.errorMsg === undefined ? 'video not available for download' : parsed.errorMsg;
                         downloadSite.d = 'none'
                         useState('renderFailed',{type:'a',value:renderFailed})
                         useState('downloadSite',{type:'a',value:downloadSite})
